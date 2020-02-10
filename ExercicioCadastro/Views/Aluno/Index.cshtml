@@ -1,0 +1,16 @@
+@model IEnumerable<ExercicioCadastro.Models.Aluno>
+
+<h2>Todos os Alunos</h2>
+
+<a href="/Aluno/Cadastrar" class="btn btn-success">Novo aluno</a>
+
+@foreach(var aluno in Model) 
+{
+    <p>Nome: @aluno.Nome</p>
+    <p>Sobrenome: @aluno.Sobrenome</p>
+    <p>CPF: @aluno.Cpf</p>
+    <p>Curso: @aluno.Curso</p>
+    <a href="/Aluno/Editar/@aluno.MatriculaId" class="btn btn-success">Editar</a>
+    <a href="/Aluno/Deletar/@aluno.MatriculaId" class="btn btn-danger">Deletar</a>
+    <hr>
+}
